@@ -19,7 +19,6 @@ class Landing extends Component {
   }
   handleLoadAmonut = e => {
     // this.setState({ priceValue: e });
-    console.log(e.target.value);
     var loadAmount = Number(e.target.value);
     if (loadAmount < 500 || loadAmount > 5000) {
       this.setState({ amountValidation: false });
@@ -30,10 +29,8 @@ class Landing extends Component {
   };
 
   handleMonth = e => {
-    console.log(e.target.value);
     var month = Number(e.target.value);
     if (month < 6 || month > 24) {
-      console.log("jfddfsdf");
       this.setState({ monthValidation: false });
     } else {
       this.setState({ monthValidation: true, monthValue: month });
@@ -47,10 +44,8 @@ class Landing extends Component {
       this.state.monthValue < 6 ||
       this.state.monthValue > 24
     ) {
-      console.log("sadadda");
       this.setState({ loanValidation: false, loadLoadDetail: true });
     } else {
-      console.log("dsadjsadf");
       this.setState({ loanValidation: true });
       axios
         .get(
@@ -59,13 +54,11 @@ class Landing extends Component {
           }&numMonths=${this.state.monthValue}`
         )
         .then(res => {
-          console.log(res);
           this.setState({ resultData: res.data, loadLoadDetail: false });
         });
     }
   };
   render() {
-    console.log(this.state.resultData);
     var loadData = this.state.resultData ? this.state.resultData : "";
     return (
       <div className="loan-container">

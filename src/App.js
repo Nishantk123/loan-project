@@ -13,7 +13,7 @@ function App() {
         className="navbar-container"
         variant="dark"
       >
-        <Navbar.Brand href="#home">{"GET LOAN AND CHECK DETAILS"}</Navbar.Brand>
+        <Navbar.Brand href="#home">{" LOAN PROJECT"}</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto" />
